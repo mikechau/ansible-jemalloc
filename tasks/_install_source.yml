@@ -24,6 +24,6 @@
 
 # http://www.canonware.com/pipermail/jemalloc-discuss/2013-May/000593.html
 - name: make install jemalloc
-  command: make install install_bin install_include install_lib
+  command: make install_bin install_include install_lib
   args:
     chdir: "{{ jemalloc_src_path }}"
