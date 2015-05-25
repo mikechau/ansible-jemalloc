@@ -24,7 +24,7 @@ In your `requirements.yml` file:
 Install:
 
 ```
-ansible-galaxy -r requirements.yml
+ansible-galaxy -r install requirements.yml
 ```
 
 Alternatively, clone the repo and do whatever you need to do!
