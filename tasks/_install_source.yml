@@ -25,7 +25,7 @@
 
 - name: move lib to lib64
   shell: mv /usr/lib/libjem* /usr/lib64/
-  when: ansible_architecture == 'x86_64'
+  when: ansible_architecture == 'x86_64' and ansible_distribution == 'CentOS'
 
 - name: reload ldconfig
   command: ldconfig
