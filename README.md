@@ -41,6 +41,7 @@ jemalloc_version: 3.6.0
 # The source path to download to.
 jemalloc_src_path: /usr/local/src/jemalloc
 
+# Note: This must be defined in the playbook.
 # Valid options:
 #   - source
 #   - package (CentOS only)
@@ -55,6 +56,7 @@ In your `playbook`:
 ```yaml
 roles:
   - role: jemalloc
+    jemalloc_install: source
     sudo: yes
 ```
 
