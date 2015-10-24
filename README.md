@@ -56,8 +56,9 @@ In your `playbook`:
 ```yaml
 roles:
   - role: jemalloc
-    jemalloc_install: source
     sudo: yes
+    vars:
+      jemalloc_install: source
 ```
 
 ## LICENSE
