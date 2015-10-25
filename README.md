@@ -51,6 +51,7 @@ jemalloc_src_path: /usr/local/src/jemalloc
 jemalloc_install: source
 
 # Full path to where libjemalloc.so is located.
+# Default is /usr/lib/libjemalloc.so.
 jemalloc_lib_path: /usr/lib/libjemalloc.so
 
 # This will make jemalloc be reinstalled everytime.
