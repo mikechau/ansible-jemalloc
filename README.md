@@ -33,20 +33,29 @@ Alternatively, clone the repo and do whatever you need to do!
 
 ```yaml
 # Specify the git repo to clone from.
+# Default is https://github.com/jemalloc/jemalloc.git.
 jemalloc_git_repo: https://github.com/jemalloc/jemalloc.git
 
 # Version of jemalloc, this is actually a git repo tag.
-jemalloc_version: 3.6.0
+# Default is 4.0.3.
+jemalloc_version: 4.0.3
 
 # The source path to download to.
+# Default is /usr/local/src/jemalloc.
 jemalloc_src_path: /usr/local/src/jemalloc
 
-# Note: This must be defined in the playbook.
+# NOTE: Must be defined inline with the role in the playbook.
 # Valid options:
-#   - source
-#   - package (CentOS only)
+#   - source - download the repo and make install.
+#   - package - install from a repo (CentOS only atm).
 jemalloc_install: source
 
+# Full path to where libjemalloc.so is located.
+jemalloc_lib_path: /usr/lib/libjemalloc.so
+
+# This will make jemalloc be reinstalled everytime.
+# Default is false.
+jemalloc_force_install: false
 ```
 
 ## Usage

@@ -1,2 +1,8 @@
 ---
+- name: check if jemalloc exists
+  stat:
+    path: "{{ jemalloc_lib_path }}"
+  register: check_jemalloc_lib
+
 - include: "_install_{{ jemalloc_install }}.yml"
+  when: jemalloc_force_install or not check_jemalloc_lib.stat.exists

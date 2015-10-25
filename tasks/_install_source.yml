@@ -23,9 +23,14 @@
   args:
     chdir: "{{ jemalloc_src_path }}"
 
-- name: move lib to lib64
-  shell: mv /usr/lib/libjem* /usr/lib64/
-  when: ansible_architecture == 'x86_64' and ansible_distribution == 'CentOS'
+- name: check for lib64
+  stat:
+    path: /usr/lib64
+  register: jemalloc_lib64_path
+
+- name: symlink jemalloc libs to lib64
+  shell: ln -s /usr/lib/libjem* /usr/lib64/
+  when: jemalloc_lib64_path.stat.exists
 
 - name: reload ldconfig
   command: ldconfig
