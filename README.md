@@ -48,7 +48,7 @@ jemalloc_src_path: /usr/local/src/jemalloc
 # Valid options:
 #   - source - download the repo and make install.
 #   - package - install from a repo (CentOS only atm).
-jemalloc_install: source
+jemalloc_install_from: source
 
 # Full path to where libjemalloc.so is located.
 # Default is /usr/lib/libjemalloc.so.
@@ -66,7 +66,7 @@ In your `playbook`:
 ```yaml
 roles:
   - role: jemalloc
-    jemalloc_install: source
+    jemalloc_install_from: source
     sudo: yes
 ```
 
